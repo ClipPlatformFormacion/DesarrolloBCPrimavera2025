@@ -11,7 +11,7 @@ table 50100 Course
             trigger OnValidate()
             var
                 IsHandled: Boolean;
-                ResSetup: Record "Resources Setup";
+                ResSetup: Record "Courses Setup";
                 NoSeries: Codeunit "No. Series";
             begin
                 IsHandled := false;
@@ -21,7 +21,7 @@ table 50100 Course
 
                 if "No." <> xRec."No." then begin
                     ResSetup.Get();
-                    NoSeries.TestManual(ResSetup."Resource Nos.");
+                    NoSeries.TestManual(ResSetup."Course Nos.");
                     "No. Series" := '';
                 end;
             end;
@@ -69,7 +69,7 @@ table 50100 Course
     var
         Resource: Record Course;
         IsHandled: Boolean;
-        ResSetup: Record "Resources Setup";
+        ResSetup: Record "Courses Setup";
         NoSeries: Codeunit "No. Series";
     begin
         IsHandled := false;
@@ -79,8 +79,8 @@ table 50100 Course
 
         if "No." = '' then begin
             ResSetup.Get();
-            ResSetup.TestField("Resource Nos.");
-            "No. Series" := ResSetup."Resource Nos.";
+            ResSetup.TestField("Course Nos.");
+            "No. Series" := ResSetup."Course Nos.";
             if NoSeries.AreRelated("No. Series", xRec."No. Series") then
                 "No. Series" := xRec."No. Series";
             "No." := NoSeries.GetNextNo("No. Series");
@@ -95,7 +95,7 @@ table 50100 Course
     var
         IsHandled: Boolean;
         Res: Record Course;
-        ResSetup: Record "Resources Setup";
+        ResSetup: Record "Courses Setup";
         NoSeries: Codeunit "No. Series";
     begin
         IsHandled := false;
@@ -105,8 +105,8 @@ table 50100 Course
 
         Res := Rec;
         ResSetup.Get();
-        ResSetup.TestField("Resource Nos.");
-        if NoSeries.LookupRelatedNoSeries(ResSetup."Resource Nos.", OldRes."No. Series", Res."No. Series") then begin
+        ResSetup.TestField("Course Nos.");
+        if NoSeries.LookupRelatedNoSeries(ResSetup."Course Nos.", OldRes."No. Series", Res."No. Series") then begin
             Res."No." := NoSeries.GetNextNo(Res."No. Series");
             Rec := Res;
             exit(true);
