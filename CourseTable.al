@@ -7,6 +7,24 @@ table 50100 Course
         field(1; "No."; Code[20])
         {
             CaptionML = ENU = 'No. from caption', ESP = 'Nº';
+
+            trigger OnValidate()
+            var
+                IsHandled: Boolean;
+                ResSetup: Record "Resources Setup";
+                NoSeries: Codeunit "No. Series";
+            begin
+                IsHandled := false;
+                OnBeforeValidateNo(Rec, xRec, IsHandled);
+                if IsHandled then
+                    exit;
+
+                if "No." <> xRec."No." then begin
+                    ResSetup.Get();
+                    NoSeries.TestManual(ResSetup."Resource Nos.");
+                    "No. Series" := '';
+                end;
+            end;
         }
         field(2; Name; Text[100])
         {
@@ -47,6 +65,32 @@ table 50100 Course
         }
     }
 
+    trigger OnInsert()
+    var
+        Resource: Record Course;
+        IsHandled: Boolean;
+        ResSetup: Record "Resources Setup";
+        NoSeries: Codeunit "No. Series";
+    begin
+        IsHandled := false;
+        OnBeforeOnInsert(Rec, IsHandled, xRec);
+        if IsHandled then
+            exit;
+
+        if "No." = '' then begin
+            ResSetup.Get();
+            ResSetup.TestField("Resource Nos.");
+            "No. Series" := ResSetup."Resource Nos.";
+            if NoSeries.AreRelated("No. Series", xRec."No. Series") then
+                "No. Series" := xRec."No. Series";
+            "No." := NoSeries.GetNextNo("No. Series");
+            Resource.ReadIsolation(IsolationLevel::ReadUncommitted);
+            Resource.SetLoadFields("No.");
+            while Resource.Get("No.") do
+                "No." := NoSeries.GetNextNo("No. Series");
+        end;
+    end;
+
     procedure AssistEdit(OldRes: Record Course) Result: Boolean
     var
         IsHandled: Boolean;
@@ -71,6 +115,16 @@ table 50100 Course
 
     [IntegrationEvent(false, false)]
     local procedure OnBeforeAssistEdit(var Resource: Record Course; xOldRes: Record Course; var IsHandled: Boolean; var Result: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeValidateNo(var Resource: Record Course; xResource: Record Course; var IsHandled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeOnInsert(var Resource: Record Course; var IsHandled: Boolean; var xResource: Record Course)
     begin
     end;
 }
