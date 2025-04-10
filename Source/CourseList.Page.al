@@ -7,6 +7,7 @@ page 50100 "Course List"
     SourceTable = Course;
     Editable = false;
     CardPageId = "Course Card";
+    PromotedActionCategoriesML = ENU = 'New,Process,Report,MyCategory', ESP = 'Nuevo,Procesado,Informes,MiCategoria';
 
     layout
     {
@@ -40,6 +41,8 @@ page 50100 "Course List"
                 CaptionML = ENU = 'Editions', ESP = 'Ediciones';
                 RunObject = page "Course Editions";
                 RunPageLink = "Course No." = field("No.");
+                Promoted = true;
+                PromotedCategory = Category4;
             }
         }
     }
