@@ -6,7 +6,8 @@
     "CRS.FileNamePatternPageCustomizations": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
     "al.enableCodeAnalysis": true,
     "al.codeAnalyzers": [
-        "${CodeCop}"
+        "${CodeCop}",
+        "${UICop}"
     ],
     "al.ruleSetPath": "./.vscode/normasCursos.ruleset.json"
 }

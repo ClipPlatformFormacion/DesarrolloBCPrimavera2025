@@ -38,6 +38,7 @@ page 50100 "Course List"
             action(CourseEditions)
             {
                 CaptionML = ENU = 'Editions', ESP = 'Ediciones';
+                Image = List;
                 RunObject = page "Course Editions";
                 RunPageLink = "Course No." = field("No.");
             }
