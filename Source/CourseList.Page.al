@@ -22,5 +22,12 @@ page 50100 "Course List"
                 field("Type (Enum)"; Rec."Type (Enum)") { }
             }
         }
+        area(FactBoxes)
+        {
+            part(Editions; "Course Editions")
+            {
+                SubPageLink = "Course No." = field("No.");
+            }
+        }
     }
 }

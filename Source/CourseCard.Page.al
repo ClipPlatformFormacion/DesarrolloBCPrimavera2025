@@ -31,6 +31,10 @@ page 50101 "Course Card"
                 field("Language Code"; Rec."Language Code") { }
                 field("Type (Enum)"; Rec."Type (Enum)") { }
             }
+            part(Editions; "Course Editions")
+            {
+                SubPageLink = "Course No." = field("No.");
+            }
             group(Invoicing)
             {
                 CaptionML = ENU = 'Invoicing', ESP = 'Facturación';
