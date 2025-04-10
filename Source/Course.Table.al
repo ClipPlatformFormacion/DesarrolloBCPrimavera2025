@@ -8,12 +8,13 @@ table 50100 Course
         field(1; "No."; Code[20])
         {
             CaptionML = ENU = 'No. from caption', ESP = 'Nº';
+            ToolTipML = ENU = 'Course identifier', ESP = 'Identificador del curso';
 
             trigger OnValidate()
             var
-                IsHandled: Boolean;
                 ResSetup: Record "Courses Setup";
                 NoSeries: Codeunit "No. Series";
+                IsHandled: Boolean;
             begin
                 IsHandled := false;
                 OnBeforeValidateNo(Rec, xRec, IsHandled);
@@ -68,10 +69,10 @@ table 50100 Course
 
     trigger OnInsert()
     var
-        Resource: Record Course;
-        IsHandled: Boolean;
-        ResSetup: Record "Courses Setup";
+        CoursesSetup: Record "Courses Setup";
+        Course: Record Course;
         NoSeries: Codeunit "No. Series";
+        IsHandled: Boolean;
     begin
         IsHandled := false;
         OnBeforeOnInsert(Rec, IsHandled, xRec);
@@ -79,53 +80,53 @@ table 50100 Course
             exit;
 
         if "No." = '' then begin
-            ResSetup.Get();
-            ResSetup.TestField("Course Nos.");
-            "No. Series" := ResSetup."Course Nos.";
+            CoursesSetup.Get();
+            CoursesSetup.TestField("Course Nos.");
+            "No. Series" := CoursesSetup."Course Nos.";
             if NoSeries.AreRelated("No. Series", xRec."No. Series") then
                 "No. Series" := xRec."No. Series";
             "No." := NoSeries.GetNextNo("No. Series");
-            Resource.ReadIsolation(IsolationLevel::ReadUncommitted);
-            Resource.SetLoadFields("No.");
-            while Resource.Get("No.") do
+            Course.ReadIsolation(IsolationLevel::ReadUncommitted);
+            Course.SetLoadFields("No.");
+            while Course.Get("No.") do
                 "No." := NoSeries.GetNextNo("No. Series");
         end;
     end;
 
-    procedure AssistEdit(OldRes: Record Course) Result: Boolean
+    procedure AssistEdit(OldCourse: Record Course) Result: Boolean
     var
-        IsHandled: Boolean;
-        Res: Record Course;
-        ResSetup: Record "Courses Setup";
+        Course: Record Course;
+        CoursesSetup: Record "Courses Setup";
         NoSeries: Codeunit "No. Series";
+        IsHandled: Boolean;
     begin
         IsHandled := false;
-        OnBeforeAssistEdit(Rec, OldRes, IsHandled, Result);
+        OnBeforeAssistEdit(Rec, OldCourse, IsHandled, Result);
         if IsHandled then
             exit(Result);
 
-        Res := Rec;
-        ResSetup.Get();
-        ResSetup.TestField("Course Nos.");
-        if NoSeries.LookupRelatedNoSeries(ResSetup."Course Nos.", OldRes."No. Series", Res."No. Series") then begin
-            Res."No." := NoSeries.GetNextNo(Res."No. Series");
-            Rec := Res;
+        Course := Rec;
+        CoursesSetup.Get();
+        CoursesSetup.TestField("Course Nos.");
+        if NoSeries.LookupRelatedNoSeries(CoursesSetup."Course Nos.", OldCourse."No. Series", Course."No. Series") then begin
+            Course."No." := NoSeries.GetNextNo(Course."No. Series");
+            Rec := Course;
             exit(true);
         end;
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnBeforeAssistEdit(var Resource: Record Course; xOldRes: Record Course; var IsHandled: Boolean; var Result: Boolean)
+    local procedure OnBeforeAssistEdit(var Course: Record Course; xOldCourse: Record Course; var IsHandled: Boolean; var Result: Boolean)
     begin
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnBeforeValidateNo(var Resource: Record Course; xResource: Record Course; var IsHandled: Boolean)
+    local procedure OnBeforeValidateNo(var Course: Record Course; xCourse: Record Course; var IsHandled: Boolean)
     begin
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnBeforeOnInsert(var Resource: Record Course; var IsHandled: Boolean; var xResource: Record Course)
+    local procedure OnBeforeOnInsert(var Course: Record Course; var IsHandled: Boolean; var xCourse: Record Course)
     begin
     end;
 }
