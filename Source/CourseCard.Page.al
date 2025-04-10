@@ -31,7 +31,7 @@ page 50101 "Course Card"
                 field("Language Code"; Rec."Language Code") { }
                 field("Type (Enum)"; Rec."Type (Enum)") { }
             }
-            part(Editions; "Course Editions")
+            part(Editions; "Course Editions Factbox")
             {
                 SubPageLink = "Course No." = field("No.");
             }
