@@ -8,7 +8,8 @@ table 50100 Course
     {
         field(1; "No."; Code[20])
         {
-            CaptionML = ENU = 'No. from caption', ESP = 'Nº';
+            // CaptionML = ENU = 'No. from caption', ESP = 'Nº';
+            Caption = 'No.';
             ToolTipML = ENU = 'Course identifier', ESP = 'Identificador del curso';
 
             trigger OnValidate()
