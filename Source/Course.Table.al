@@ -1,3 +1,4 @@
+// Un comentario
 table 50100 Course
 {
     CaptionML = ENU = 'Course', ESP = 'Curso';
