@@ -1,6 +1,6 @@
 permissionset 50100 "CourseSUPER"
 {
-    CaptionML = ENU = 'All for Courses app', ESP = 'Todos los permisos para los cursos';
+    Caption = 'All for Courses app', Comment = 'ESP="Todos los permisos para los cursos"';
     Assignable = true;
     Permissions = tabledata Course = RIMD,
         tabledata "Courses Setup" = RIMD,

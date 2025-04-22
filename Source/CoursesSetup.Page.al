@@ -2,7 +2,7 @@ page 50102 "Courses Setup"
 {
     AccessByPermission = TableData Course = R;
     ApplicationArea = All;
-    CaptionML = ENU = 'Courses Setup', ESP = 'Conf. cursos';
+    Caption = 'Courses Setup', Comment = 'ESP="Conf. cursos"';
     DeleteAllowed = false;
     InsertAllowed = false;
     PageType = Card;
@@ -15,11 +15,11 @@ page 50102 "Courses Setup"
         {
             group(Numbering)
             {
-                CaptionML = ENU = 'Numbering', ESP = 'Numeración';
+                Caption = 'Numbering', Comment = 'ESP="Numeración"';
                 field("Course Nos."; Rec."Course Nos.")
                 {
                     ApplicationArea = All;
-                    ToolTipML = ENU = 'Specifies the number series code you can use to assign numbers to Courses.', ESP = 'Especifica el código de serie numérica que se puede utilizatr para asignar números a los cursos';
+                    ToolTip = 'Specifies the number series code you can use to assign numbers to Courses.', Comment = 'ESP="Especifica el código de serie numérica que se puede utilizatr para asignar números a los cursos"';
                 }
             }
         }
