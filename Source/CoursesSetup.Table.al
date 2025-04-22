@@ -1,4 +1,4 @@
-table 50101 "Courses Setup"
+table 50101 "CLIP Courses Setup"
 {
     Caption = 'Courses Setup', Comment = 'ESP="Conf. cursos"';
     DataClassification = CustomerContent;

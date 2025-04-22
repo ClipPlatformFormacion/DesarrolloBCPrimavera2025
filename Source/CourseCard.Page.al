@@ -1,10 +1,10 @@
-page 50101 "Course Card"
+page 50101 "CLIP Course Card"
 {
     Caption = 'Course Card', Comment = 'ESP="Ficha curso"';
     PageType = Card;
     ApplicationArea = All;
     UsageCategory = None;
-    SourceTable = Course;
+    SourceTable = "CLIP Course";
 
     layout
     {
@@ -31,7 +31,7 @@ page 50101 "Course Card"
                 field("Language Code"; Rec."Language Code") { }
                 field("Type (Enum)"; Rec."Type (Enum)") { }
             }
-            part(Editions; "Course Editions Factbox")
+            part(Editions; "CLIP Course Editions Factbox")
             {
                 SubPageLink = "Course No." = field("No.");
             }

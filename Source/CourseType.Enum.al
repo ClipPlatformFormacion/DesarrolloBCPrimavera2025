@@ -1,4 +1,4 @@
-enum 50100 "Course Type"
+enum 50100 "CLIP Course Type"
 {
     Caption = 'Course Type', Comment = 'ESP="Tipo curso"';
     Extensible = true;

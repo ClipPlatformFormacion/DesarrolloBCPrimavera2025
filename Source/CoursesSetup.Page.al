@@ -1,12 +1,12 @@
-page 50102 "Courses Setup"
+page 50102 "CLIP Courses Setup"
 {
-    AccessByPermission = TableData Course = R;
+    AccessByPermission = TableData "CLIP Course" = R;
     ApplicationArea = All;
     Caption = 'Courses Setup', Comment = 'ESP="Conf. cursos"';
     DeleteAllowed = false;
     InsertAllowed = false;
     PageType = Card;
-    SourceTable = "Courses Setup";
+    SourceTable = "CLIP Courses Setup";
     UsageCategory = Administration;
 
     layout
