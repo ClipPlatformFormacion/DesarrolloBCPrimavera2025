@@ -1,5 +1,18 @@
 codeunit 50100 "CLIPCourse - Sales Management"
 {
+    [EventSubscriber(ObjectType::Table, Database::"Option Lookup Buffer", OnBeforeIncludeOption, '', false, false)]
+    local procedure "Option Lookup Buffer_OnBeforeIncludeOption"(LookupType: Option; Option: Integer; var Handled: Boolean; var Result: Boolean)
+    begin
+        if LookupType <> Enum::"Option Lookup Type"::Sales.AsInteger() then
+            exit;
+
+        if Option <> "Sales Line Type"::"CLIP Course".AsInteger() then
+            exit;
+
+        Result := true;
+        Handled := true;
+    end;
+
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", OnAfterAssignFieldsForNo, '', false, false)]
     local procedure OnAfterAssignFieldsForNo(SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line")
     begin
