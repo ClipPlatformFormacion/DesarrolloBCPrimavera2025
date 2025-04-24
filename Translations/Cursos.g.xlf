@@ -33,6 +33,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="Duración (horas)"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course - Field Duration (hours) - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2553370741 - Field 2139693550 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gen. Prod. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Grupo contable prod. gen."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course - Field Gen. Prod. Posting Group - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2553370741 - Field 2273653569 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Language Code</source>
           <note from="Developer" annotates="general" priority="2">ESP="Cód. idioma"</note>
@@ -77,6 +82,11 @@
           <source> ,Instructor-Lead,Video Tutorial</source>
           <note from="Developer" annotates="general" priority="2">ESP=" ,Guiado por profesor,Vídeo tutorial"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course - Field Type (Option) - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2553370741 - Field 236064653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Prod. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Grupo contable IVA prod."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course - Field VAT Prod. Posting Group - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 346014409 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Course Edition</source>
