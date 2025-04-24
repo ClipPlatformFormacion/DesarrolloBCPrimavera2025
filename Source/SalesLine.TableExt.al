@@ -6,5 +6,11 @@ tableextension 50100 "CLIP Sales Line" extends "Sales Line"
         {
             TableRelation = if (Type = const("CLIP Course")) "CLIP Course";
         }
+        field(50100; "CLIP Course Edition"; Code[20])
+        {
+            Caption = 'Course Edition', comment = 'ESP="Edición curso"';
+            DataClassification = CustomerContent;
+            TableRelation = "CLIP Course Edition";
+        }
     }
 }
