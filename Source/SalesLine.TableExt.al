@@ -10,7 +10,7 @@ tableextension 50100 "CLIP Sales Line" extends "Sales Line"
         {
             Caption = 'Course Edition', comment = 'ESP="Edición curso"';
             DataClassification = CustomerContent;
-            TableRelation = "CLIP Course Edition";
+            TableRelation = "CLIP Course Edition".Edition where("Course No." = field("No."));
         }
     }
 }

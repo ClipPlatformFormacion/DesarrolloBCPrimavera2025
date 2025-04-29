@@ -3,6 +3,7 @@ table 50100 "CLIP Course"
 {
     Caption = 'Course', Comment = 'ESP="Curso"';
     DataClassification = CustomerContent;
+    LookupPageId = "CLIP Course List";
 
     fields
     {
@@ -85,6 +86,12 @@ table 50100 "CLIP Course"
             Caption = 'VAT Prod. Posting Group', Comment = 'ESP="Grupo contable IVA prod."';
             TableRelation = "VAT Product Posting Group";
         }
+    }
+
+    fieldgroups
+    {
+        fieldgroup(DropDown; "No.", Name, "Duration (hours)", "Type (Enum)", "Language Code") { }
+        fieldgroup(Brick; "No.", Name, Price) { }
     }
 
     trigger OnInsert()

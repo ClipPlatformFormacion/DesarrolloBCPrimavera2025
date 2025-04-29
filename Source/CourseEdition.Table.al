@@ -2,6 +2,7 @@ table 50102 "CLIP Course Edition"
 {
     Caption = 'Course Edition', Comment = 'ESP="Edición curso"';
     DataClassification = CustomerContent;
+    LookupPageId = "CLIP Course Editions";
 
     fields
     {
@@ -30,5 +31,11 @@ table 50102 "CLIP Course Edition"
         {
             Clustered = true;
         }
+    }
+
+    fieldgroups
+    {
+        fieldgroup(DropDown; Edition, "Max. Students", "Start Date") { }
+        fieldgroup(Brick; Edition, "Max. Students", "Start Date") { }
     }
 }
