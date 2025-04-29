@@ -56,4 +56,32 @@ codeunit 50140 "CLIP Courses Test"
         if Result <> Value2 then
             Error('El resultado no es correcto');
     end;
+
+    [Test]
+    procedure SelectingACourseOnASalesLine()
+    var
+        Course: Record "CLIP Course";
+        SalesHeader: Record "Sales Header";
+    begin
+        // [Scenario] al seleccionar un curso en una línea de venta, el sistema rellena la información relacionada
+
+        // [Given] Un curso con descripción, precio y grupos contables
+        //         Un documento de venta
+        Course.Init();
+        Course."No." := 'TEST';
+        Course.Name := 'Un curso de test';
+        Course.Price := 999.99;
+        // Course."Gen. Prod. Posting Group" := 
+        // Course."VAT Prod. Posting Group" :=
+        Course.Insert();
+
+        SalesHeader.Init();
+        SalesHeader."Sell-to Customer No."
+
+
+        // [When] seleccionamos el curso en el documento de venta
+
+
+        // [Then] la línea de venta tiene la Descripción, Precio y Grupos contables especificados en el curso
+    end;
 }
