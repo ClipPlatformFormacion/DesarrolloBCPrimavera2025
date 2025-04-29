@@ -2,9 +2,9 @@ codeunit 50141 CLIPMin
 {
     procedure GetMin(v1: Decimal; v2: Decimal): Decimal
     begin
-        if v1 < v2 then
-            exit(v1)
+        if v2 < v1 then
+            exit(v2)
         else
-            exit(v2);
+            exit(v1);
     end;
 }
