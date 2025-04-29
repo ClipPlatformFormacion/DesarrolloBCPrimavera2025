@@ -1,7 +1,7 @@
 {
   "id": "ce7d2ac7-5668-4290-9b0b-5038001db0e1",
-  "name": "TestApp",
-  "publisher": "Default Publisher",
+  "name": "Test - Cursos",
+  "publisher": "ClipPlatform",
   "version": "1.0.0.0",
   "brief": "",
   "description": "",
@@ -16,7 +16,7 @@
   "application": "25.0.0.0",
   "idRanges": [
     {
-      "from": 50100,
+      "from": 50140,
       "to": 50149
     }
   ],
@@ -27,6 +27,6 @@
   },
   "runtime": "14.0",
   "features": [
-    "NoImplicitWith"
+    "NoImplicitWith","TranslationFile"
   ]
 }

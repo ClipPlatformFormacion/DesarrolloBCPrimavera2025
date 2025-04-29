@@ -1,0 +1,36 @@
+{
+    "name": "Cursos",
+    "description": "Normas personalizadas para el desarrollo de cursos",
+    "rules": [
+        {
+            "id": "AA0218",
+            "action": "None",
+            "justification": "No quiero poner tantos Tooltips"
+        },
+        {
+            "id": "AA0072",
+            "action": "Warning",
+            "justification": "nombres de las variables"
+        },
+        {
+            "id": "AS0051",
+            "action": "None",
+            "justification": "No voy a la AppSource"
+        },
+        {
+            "id": "AS0052",
+            "action": "None",
+            "justification": "No voy a la AppSource"
+        },
+        {
+            "id": "AS0092",
+            "action": "None",
+            "justification": "No voy a la AppSource"
+        },
+        {
+            "id": "AS0084",
+            "action": "None",
+            "justification": "No voy a la AppSource"
+        }
+    ]
+}
