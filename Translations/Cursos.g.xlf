@@ -173,10 +173,20 @@
           <note from="Developer" annotates="general" priority="2">ESP="Especifica el código de serie numérica que se puede utilizatr para asignar números a los cursos"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page CLIP Courses Setup - Control Course Nos. - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="TableExtension 4004720939 - Field 346014409 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Course Edition</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Edición curso"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CLIP Sales Invoice Line - Field CLIP Course Edition - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3335146236 - Field 346014409 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Course Edition</source>
           <note from="Developer" annotates="general" priority="2">ESP="Edición curso"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension CLIP Sales Line - Field CLIP Course Edition - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2857866236 - Field 346014409 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
+          <source>Course Edition</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Edición curso"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CLIP Sales Shipment Line - Field CLIP Course Edition - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 75238701 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Course Type</source>
