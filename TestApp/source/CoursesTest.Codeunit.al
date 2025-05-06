@@ -87,4 +87,43 @@ codeunit 50140 "CLIP Courses Test"
         LibraryAssert.AreEqual(Course."Gen. Prod. Posting Group", SalesLine."Gen. Prod. Posting Group", 'El grupo registro producto no es correcto');
         LibraryAssert.AreEqual(Course."VAT Prod. Posting Group", SalesLine."VAT Prod. Posting Group", 'El grupo registro IVA prod. no es correcto');
     end;
+
+    [Test]
+    procedure CourseSalesPosting()
+    var
+        Course: Record "CLIP Course";
+        CourseEdition: Record "CLIP Course Edition";
+        SalesHeader: Record "Sales Header";
+        SalesLine: Record "Sales Line";
+        SalesShipmentLine: Record "Sales Shipment Line";
+        SalesInvoiceLine: Record "Sales Invoice Line";
+        LibrarySales: Codeunit "Library - Sales";
+        LibraryAssert: Codeunit "Library Assert";
+        LibraryCourse: Codeunit "CLIP Library - Course";
+        DocumentNo: Code[20];
+    begin
+        // [Scenario] Al registrar un pedido de venta para un curso y edición, la información de la edición se guarda en los documentos registrados (albarán y factura)
+
+        // [Given] Un curso
+        //         Una edición
+        //         Un pedido de venta para el curso y edición
+        Course := LibraryCourse.CreateCourse();
+        CourseEdition := LibraryCourse.CreateEdition(Course);
+        LibrarySales.CreateSalesHeader(SalesHeader, "Sales Document Type"::Order, '');
+        LibrarySales.CreateSalesLine(SalesLine, SalesHeader, "Sales Line Type"::"CLIP Course", Course."No.", 1);
+        SalesLine.Validate("CLIP Course Edition", CourseEdition.Edition);
+        SalesLine.Modify(true);
+
+        // [When] Registremos el albarán
+        DocumentNo := LibrarySales.PostSalesDocument(SalesHeader, true, false);
+        // [Then] La edición es correcta en el albarán
+        SalesShipmentLine.Get(DocumentNo, SalesLine."Line No.");
+        LibraryAssert.AreEqual(SalesLine."CLIP Course Edition", SalesShipmentLine."CLIP Course Edition", 'La edición no es correcta en el albarán');
+
+        // [When] Registremos la factura
+        DocumentNo := LibrarySales.PostSalesDocument(SalesHeader, false, true);
+        // [Then] La edición es correcta en la factura
+        SalesInvoiceLine.Get(DocumentNo, SalesLine."Line No.");
+        LibraryAssert.AreEqual(SalesLine."CLIP Course Edition", SalesInvoiceLine."CLIP Course Edition", 'La edición no es correcta en la factura');
+    end;
 }

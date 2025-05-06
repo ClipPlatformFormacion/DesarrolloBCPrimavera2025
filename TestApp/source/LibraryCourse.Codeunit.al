@@ -20,6 +20,18 @@ codeunit 50142 "CLIP Library - Course"
         Course.Modify(true);
     end;
 
+    internal procedure CreateEdition(Course: Record "CLIP Course") CourseEdition: Record "CLIP Course Edition"
+    var
+        LibraryRandom: Codeunit "Library - Random";
+    begin
+        CourseEdition.Init();
+        CourseEdition.Validate("Course No.", Course."No.");
+        CourseEdition.Validate(Edition, LibraryRandom.RandText(MaxStrLen(CourseEdition.Edition)));
+        CourseEdition.Validate("Max. Students", LibraryRandom.RandIntInRange(10, 20));
+        CourseEdition.Validate("Start Date", LibraryRandom.RandDateFrom(Today(), 30));
+        CourseEdition.Insert(true);
+    end;
+
     local procedure CoursesNoSeriesSetup()
     var
         CoursesSetup: Record "CLIP Courses Setup";
