@@ -1,6 +1,7 @@
 codeunit 50140 "CLIP Courses Test"
 {
     Subtype = Test;
+    TestPermissions = Disabled;
 
     // [Test]
     // procedure Test001()
@@ -62,26 +63,28 @@ codeunit 50140 "CLIP Courses Test"
     var
         Course: Record "CLIP Course";
         SalesHeader: Record "Sales Header";
+        SalesLine: Record "Sales Line";
+        LibrarySales: Codeunit "Library - Sales";
+        LibraryAssert: Codeunit "Library Assert";
+        LibraryCourse: Codeunit "CLIP Library - Course";
     begin
         // [Scenario] al seleccionar un curso en una línea de venta, el sistema rellena la información relacionada
 
         // [Given] Un curso con descripción, precio y grupos contables
         //         Un documento de venta
-        Course.Init();
-        Course."No." := 'TEST';
-        Course.Name := 'Un curso de test';
-        Course.Price := 999.99;
-        // Course."Gen. Prod. Posting Group" := 
-        // Course."VAT Prod. Posting Group" :=
-        Course.Insert();
+        Course := LibraryCourse.CreateCourse();
 
-        SalesHeader.Init();
-        SalesHeader."Sell-to Customer No."
-
+        LibrarySales.CreateSalesHeader(SalesHeader, "Sales Document Type"::Invoice, '');
+        LibrarySales.CreateSalesLineSimple(SalesLine, SalesHeader);
 
         // [When] seleccionamos el curso en el documento de venta
-
+        SalesLine.Validate(Type, "Sales Line Type"::"CLIP Course");
+        SalesLine.Validate("No.", Course."No.");
 
         // [Then] la línea de venta tiene la Descripción, Precio y Grupos contables especificados en el curso
+        LibraryAssert.AreEqual(Course.Name, SalesLine.Description, 'La descripción no es correcta');
+        LibraryAssert.AreEqual(Course.Price, SalesLine."Unit Price", 'El precio no es correcto');
+        LibraryAssert.AreEqual(Course."Gen. Prod. Posting Group", SalesLine."Gen. Prod. Posting Group", 'El grupo registro producto no es correcto');
+        LibraryAssert.AreEqual(Course."VAT Prod. Posting Group", SalesLine."VAT Prod. Posting Group", 'El grupo registro IVA prod. no es correcto');
     end;
 }
