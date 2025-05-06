@@ -42,6 +42,23 @@ page 50100 "CLIP Course List"
                 RunObject = page "CLIP Course Editions";
                 RunPageLink = "Course No." = field("No.");
             }
+            group(History)
+            {
+                Caption = 'History';
+                Image = History;
+                action("Ledger E&ntries")
+                {
+                    ApplicationArea = Jobs;
+                    Caption = 'Ledger E&ntries';
+                    Image = ResourceLedger;
+                    RunObject = Page "CLIP Course Ledger Entries";
+                    RunPageLink = "Course No." = field("No.");
+                    RunPageView = sorting("Course No.")
+                                  order(descending);
+                    ShortCutKey = 'Ctrl+F7';
+                    ToolTip = 'View the history of transactions that have been posted for the selected record.';
+                }
+            }
         }
         area(Promoted)
         {
@@ -53,6 +70,8 @@ page 50100 "CLIP Course List"
                 actionref(CourseEditions_Promoted; CourseEditions)
                 {
                 }
+                actionref(LedgerEntries_Promoted; "Ledger E&ntries")
+                { }
             }
         }
     }
