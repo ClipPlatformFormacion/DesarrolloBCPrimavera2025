@@ -90,12 +90,12 @@ codeunit 50100 "CLIPCourse - Sales Management"
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnPostCourseJournalLineOnAfterInit(ResJnlLine: Record "Res. Journal Line"; var SalesLine: Record "Sales Line")
+    local procedure OnPostCourseJournalLineOnAfterInit(CourseJournalLine: Record "CLIP Course Journal Line"; var SalesLine: Record "Sales Line")
     begin
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnAfterPostCourseJournalLine(var SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line"; ResJnlLine: Record "Res. Journal Line")
+    local procedure OnAfterPostCourseJournalLine(var SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line"; CourseJournalLine: Record "CLIP Course Journal Line")
     begin
     end;
 }

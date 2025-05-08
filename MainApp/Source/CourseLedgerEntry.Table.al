@@ -184,36 +184,37 @@ table 50103 "CLIP Course Ledger Entry"
         exit(FindRecordManagement.GetLastEntryIntFieldValue(Rec, FieldNo("Entry No.")))
     end;
 
-    // procedure CopyFromResJnlLine(ResJnlLine: Record "Course Journal Line")
-    // begin
-    //     // "Entry Type" := ResJnlLine."Entry Type";
-    //     "Document No." := ResJnlLine."Document No.";
-    //     "External Document No." := ResJnlLine."External Document No.";        
-    //     "Posting Date" := ResJnlLine."Posting Date";
-    //     "Document Date" := ResJnlLine."Document Date";
-    //     "Course No." := ResJnlLine."Course No.";
-    //     Description := ResJnlLine.Description;
-    //     Quantity := ResJnlLine.Quantity;        
-    //     "Unit Price" := ResJnlLine."Unit Price";
-    //     "Total Price" := ResJnlLine."Total Price";
-    //     // "Global Dimension 1 Code" := ResJnlLine."Shortcut Dimension 1 Code";
-    //     // "Global Dimension 2 Code" := ResJnlLine."Shortcut Dimension 2 Code";
-    //     // "Dimension Set ID" := ResJnlLine."Dimension Set ID";        
-    //     "Reason Code" := ResJnlLine."Reason Code";
-    //     "Gen. Bus. Posting Group" := ResJnlLine."Gen. Bus. Posting Group";
-    //     "Gen. Prod. Posting Group" := ResJnlLine."Gen. Prod. Posting Group";        
-    //     "Customer No." := ResJnlLine."Source No.";
+    procedure CopyFromCourseJournalLine(CourseJournalLine: Record "CLIP Course Journal Line")
+    begin
+        // "Entry Type" := ResJnlLine."Entry Type";
+        "Document No." := CourseJournalLine."Document No.";
+        "External Document No." := CourseJournalLine."External Document No.";
+        "Posting Date" := CourseJournalLine."Posting Date";
+        "Document Date" := CourseJournalLine."Document Date";
+        "Course No." := CourseJournalLine."Course No.";
+        "Course Edition" := CourseJournalLine."Course Edition";
+        Description := CourseJournalLine.Description;
+        Quantity := CourseJournalLine.Quantity;
+        "Unit Price" := CourseJournalLine."Unit Price";
+        "Total Price" := CourseJournalLine."Total Price";
+        // "Global Dimension 1 Code" := ResJnlLine."Shortcut Dimension 1 Code";
+        // "Global Dimension 2 Code" := ResJnlLine."Shortcut Dimension 2 Code";
+        // "Dimension Set ID" := ResJnlLine."Dimension Set ID";        
+        "Reason Code" := CourseJournalLine."Reason Code";
+        "Gen. Bus. Posting Group" := CourseJournalLine."Gen. Bus. Posting Group";
+        "Gen. Prod. Posting Group" := CourseJournalLine."Gen. Prod. Posting Group";
+        "Customer No." := CourseJournalLine."Customer No.";
 
-    //     OnAfterCopyFromResJnlLine(Rec, ResJnlLine);
-    // end;
+        OnAfterCopyFromCourseJournalLine(Rec, CourseJournalLine);
+    end;
 
     // procedure ShowDimensions()
     // begin
     //     DimMgt.ShowDimensionSet("Dimension Set ID", StrSubstNo('%1 %2', TableCaption(), "Entry No."));
     // end;
 
-    // [IntegrationEvent(false, false)]
-    // procedure OnAfterCopyFromResJnlLine(var ResLedgerEntry: Record "CLIP Course Ledger Entry"; ResJournalLine: Record "Course Journal Line")
-    // begin
-    // end;
+    [IntegrationEvent(false, false)]
+    procedure OnAfterCopyFromCourseJournalLine(var CourseLedgerEntry: Record "CLIP Course Ledger Entry"; CourseJournalLine: Record "CLIP Course Journal Line")
+    begin
+    end;
 }

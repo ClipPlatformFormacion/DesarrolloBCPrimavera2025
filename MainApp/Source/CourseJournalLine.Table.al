@@ -53,6 +53,11 @@ table 50104 "CLIP Course Journal Line"
                 // CreateDimFromDefaultDim(Rec.FieldNo("Course No."));
             end;
         }
+        field(7; "Course Edition"; Code[20])
+        {
+            Caption = 'Course Edition';
+            TableRelation = "CLIP Course Edition".Edition where("Course No." = field("Course No."));
+        }
         field(8; Description; Text[100])
         {
             Caption = 'Description';
@@ -307,6 +312,7 @@ table 50104 "CLIP Course Journal Line"
     procedure CopyFromSalesLine(SalesLine: Record "Sales Line")
     begin
         "Course No." := SalesLine."No.";
+        "Course Edition" := SalesLine."CLIP Course Edition";
         Description := SalesLine.Description;
         "Customer No." := SalesLine."Sell-to Customer No.";
         // "Shortcut Dimension 1 Code" := SalesLine."Shortcut Dimension 1 Code";

@@ -113,6 +113,106 @@
           <note from="Developer" annotates="general" priority="2">ESP="Fecha inicio"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Edition - Field Start Date - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 333329544 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Course Journal Line</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Journal Line - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 333329544 - Field 1535828835 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Course Edition</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Journal Line - Field Course Edition - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 333329544 - Field 1667959142 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Course No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Journal Line - Field Course No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 333329544 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Source No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Journal Line - Field Customer No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 333329544 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Journal Line - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 333329544 - Field 580412389 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Journal Line - Field Document Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 333329544 - Field 486908828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Journal Line - Field Document No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 333329544 - Field 1527563463 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>External Document No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Journal Line - Field External Document No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 333329544 - Field 633819257 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gen. Bus. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Journal Line - Field Gen. Bus. Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 333329544 - Field 2139693550 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gen. Prod. Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Journal Line - Field Gen. Prod. Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 333329544 - Field 2704330142 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Journal Batch Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Journal Line - Field Journal Batch Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 333329544 - Field 3684440170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Journal Template Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Journal Line - Field Journal Template Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 333329544 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Journal Line - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 333329544 - Field 3710982960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Journal Line - Field Posting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 333329544 - Field 2704404533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Journal Line - Field Quantity - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 333329544 - Field 1908046867 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reason Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Journal Line - Field Reason Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 333329544 - Field 2720485332 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Source Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Journal Line - Field Source Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 333329544 - Field 2283884360 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>System-Created Entry</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Journal Line - Field System-Created Entry - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 333329544 - Field 2812148497 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Price</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Journal Line - Field Total Price - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 333329544 - Field 2937233469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit Price</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Journal Line - Field Unit Price - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3082113822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Course Ledger Entry</source>
           <note from="Developer" annotates="general" priority="2"></note>
