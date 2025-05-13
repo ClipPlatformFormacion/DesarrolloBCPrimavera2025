@@ -1,8 +1,8 @@
 table 50103 "CLIP Course Ledger Entry"
 {
     Caption = 'Course Ledger Entry';
-    // DrillDownPageID = "Course Ledger Entries";
-    // LookupPageID = "Course Ledger Entries";
+    DrillDownPageID = "CLIP Course Ledger Entries";
+    LookupPageID = "CLIP Course Ledger Entries";
     DataClassification = CustomerContent;
 
     fields
@@ -41,16 +41,19 @@ table 50103 "CLIP Course Ledger Entry"
         {
             Caption = 'Quantity';
             DecimalPlaces = 0 : 5;
+            BlankZero = true;
         }
         field(15; "Unit Price"; Decimal)
         {
             AutoFormatType = 2;
             Caption = 'Unit Price';
+            BlankZero = true;
         }
         field(16; "Total Price"; Decimal)
         {
             AutoFormatType = 1;
             Caption = 'Total Price';
+            BlankZero = true;
         }
         // field(17; "Global Dimension 1 Code"; Code[20])
         // {
@@ -165,6 +168,10 @@ table 50103 "CLIP Course Ledger Entry"
         {
             Clustered = true;
         }
+        // key(SK1; "Course No.", "Course Edition", "Posting Date")
+        // {
+        //     SumIndexFields = Quantity;
+        // }
     }
 
     fieldgroups

@@ -19,6 +19,7 @@ page 50103 "CLIP Course Editions Factbox"
                 field(Edition; Rec.Edition) { }
                 field("Start Date"; Rec."Start Date") { }
                 field("Max. Students"; Rec."Max. Students") { }
+                field("Sales (Qty.)"; Rec."Sales (Qty.)") { }
             }
         }
     }

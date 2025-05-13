@@ -41,10 +41,12 @@ table 50100 "CLIP Course"
         field(4; "Duration (hours)"; Integer)
         {
             Caption = 'Duration (hours)', Comment = 'ESP="Duración (horas)"';
+            BlankZero = true;
         }
         field(5; Price; Decimal)
         {
             Caption = 'Price', Comment = 'ESP="Precio"';
+            BlankZero = true;
         }
         field(6; "Language Code"; Code[10])
         {

@@ -98,6 +98,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="Nº curso"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Edition - Field Course No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 346014409 - Field 995090288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date Filter</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Filtro fecha"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Edition - Field Date Filter - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 346014409 - Field 2511900496 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Edition</source>
           <note from="Developer" annotates="general" priority="2">ESP="Edición"</note>
@@ -107,6 +112,11 @@
           <source>Max. Students</source>
           <note from="Developer" annotates="general" priority="2">ESP="Nº máx. alumnos"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Edition - Field Max. Students - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 346014409 - Field 3986305445 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales (Qty.)</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Ventas (Cdad.)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Edition - Field Sales (Qty.) - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 346014409 - Field 474480784 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Start Date</source>
