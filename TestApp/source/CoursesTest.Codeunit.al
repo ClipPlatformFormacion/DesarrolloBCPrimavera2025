@@ -179,4 +179,57 @@ codeunit 50140 "CLIP Courses Test"
         LibraryAssert.AreEqual(SalesHeader."External Document No.", CourseLedgerEntry."External Document No.", 'El Nº documento externo no es correcto');
         LibraryAssert.AreEqual(SalesHeader."Sell-to Customer No.", CourseLedgerEntry."Customer No.", 'El cliente no es correcto');
     end;
+
+    [Test]
+    [HandlerFunctions('MessageMaxStudentExceeded')]
+    procedure CheckCourseEdition()
+    var
+        Course: Record "CLIP Course";
+        CourseEdition: Record "CLIP Course Edition";
+        SalesHeader: Record "Sales Header";
+        SalesLine: Record "Sales Line";
+        LibrarySales: Codeunit "Library - Sales";
+        LibraryCourse: Codeunit "CLIP Library - Course";
+    begin
+        // [Scenario] Si la venta de una edición, conjuntamente con las ventas previas, llega al número máximo de alumnos, el sistema tiene que mostrar una notificación
+
+        // [Given] Un curso
+        //         Una edición
+        //         Una ventas previas para el curso y edición
+        //         Un pedido de venta para el curso y edición
+        Course := LibraryCourse.CreateCourse();
+        CourseEdition := LibraryCourse.CreateEdition(Course);
+
+        LibrarySales.CreateSalesHeader(SalesHeader, "Sales Document Type"::Invoice, '');
+        LibrarySales.CreateSalesLine(SalesLine, SalesHeader, "Sales Line Type"::"CLIP Course", Course."No.", 2);
+        SalesLine.Validate("CLIP Course Edition", CourseEdition.Edition);
+        SalesLine.Modify(true);
+        LibrarySales.CreateSalesLine(SalesLine, SalesHeader, "Sales Line Type"::"CLIP Course", Course."No.", 3);
+        SalesLine.Validate("CLIP Course Edition", CourseEdition.Edition);
+        SalesLine.Modify(true);
+        LibrarySales.CreateSalesLine(SalesLine, SalesHeader, "Sales Line Type"::"CLIP Course", Course."No.", 4);
+        SalesLine.Validate("CLIP Course Edition", CourseEdition.Edition);
+        SalesLine.Modify(true);
+        LibrarySales.PostSalesDocument(SalesHeader, true, true);
+
+
+        LibrarySales.CreateSalesHeader(SalesHeader, "Sales Document Type"::Invoice, '');
+        LibrarySales.CreateSalesLineSimple(SalesLine, SalesHeader);
+        SalesLine.Validate(Type, "Sales Line Type"::"CLIP Course");
+        SalesLine.Validate("No.", Course."No.");
+        SalesLine.Validate(Quantity, 12);
+        // [when] se selecciona la edición en el pedido de venta
+        SalesLine.Validate("CLIP Course Edition", CourseEdition.Edition);
+
+        // [Then] el sistema tiene que mostrar una notificación
+    end;
+
+
+    [MessageHandler]
+    procedure MessageMaxStudentExceeded(Message: Text[1024])
+    var
+        LibraryAssert: Codeunit "Library Assert";
+    begin
+        LibraryAssert.IsTrue(Message.Contains('se superaría el número máximo de alumnos'), 'El mensaje no es correcto');
+    end;
 }
