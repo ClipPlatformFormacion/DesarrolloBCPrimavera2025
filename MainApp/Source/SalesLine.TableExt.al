@@ -30,7 +30,6 @@ tableextension 50100 "CLIP Sales Line" extends "Sales Line"
     var
         CourseEdition: Record "CLIP Course Edition";
         CourseLedgerEntry: Record "CLIP Course Ledger Entry";
-        PreviousSales: Decimal;
     begin
         if Rec.Type <> Rec.Type::"CLIP Course" then
             exit;
@@ -43,14 +42,10 @@ tableextension 50100 "CLIP Sales Line" extends "Sales Line"
 
         CourseLedgerEntry.SetRange("Course No.", Rec."No.");
         CourseLedgerEntry.SetRange("Course Edition", Rec."CLIP Course Edition");
-        CourseLedgerEntry.SetLoadFields(Quantity);
-        if CourseLedgerEntry.FindSet() then
-            repeat
-                PreviousSales := PreviousSales + CourseLedgerEntry.Quantity;
-            until CourseLedgerEntry.Next() = 0;
+        CourseLedgerEntry.CalcSums(Quantity);
 
-        if (PreviousSales + Rec.Quantity) > CourseEdition."Max. Students" then
+        if (CourseLedgerEntry.Quantity + Rec.Quantity) > CourseEdition."Max. Students" then
             Message('Con las ventas previas (%1) más la venta actual (%2) para el curso %3 y edición %4, se superaría el número máximo de alumnos (%5)',
-                PreviousSales, Rec.Quantity, Rec."No.", Rec."CLIP Course Edition", CourseEdition."Max. Students");
+                CourseLedgerEntry.Quantity, Rec.Quantity, Rec."No.", Rec."CLIP Course Edition", CourseEdition."Max. Students");
     end;
 }
