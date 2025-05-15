@@ -199,6 +199,8 @@ codeunit 50140 "CLIP Courses Test"
         //         Un pedido de venta para el curso y edición
         Course := LibraryCourse.CreateCourse();
         CourseEdition := LibraryCourse.CreateEdition(Course);
+        CourseEdition."Max. Students" := 10;
+        CourseEdition.Modify(true);
 
         LibrarySales.CreateSalesHeader(SalesHeader, "Sales Document Type"::Invoice, '');
         LibrarySales.CreateSalesLine(SalesLine, SalesHeader, "Sales Line Type"::"CLIP Course", Course."No.", 2);
@@ -217,7 +219,7 @@ codeunit 50140 "CLIP Courses Test"
         LibrarySales.CreateSalesLineSimple(SalesLine, SalesHeader);
         SalesLine.Validate(Type, "Sales Line Type"::"CLIP Course");
         SalesLine.Validate("No.", Course."No.");
-        SalesLine.Validate(Quantity, 12);
+        SalesLine.Validate(Quantity, 2);
         // [when] se selecciona la edición en el pedido de venta
         SalesLine.Validate("CLIP Course Edition", CourseEdition.Edition);
 

@@ -8,6 +8,7 @@ codeunit 50142 "CLIP Library - Course"
         LibraryERM: Codeunit "Library - ERM";
     begin
         CoursesNoSeriesSetup();
+        LibraryRandom.Init();
 
         LibraryERM.FindGeneralPostingSetupInvtFull(GeneralPostingSetup);
         LibraryERM.FindVATPostingSetupInvt(VATPostingSetup);
@@ -24,6 +25,7 @@ codeunit 50142 "CLIP Library - Course"
     var
         LibraryRandom: Codeunit "Library - Random";
     begin
+        LibraryRandom.Init();
         CourseEdition.Init();
         CourseEdition.Validate("Course No.", Course."No.");
         CourseEdition.Validate(Edition, LibraryRandom.RandText(MaxStrLen(CourseEdition.Edition)));
