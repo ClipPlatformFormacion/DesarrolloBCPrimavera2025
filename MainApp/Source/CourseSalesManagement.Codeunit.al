@@ -98,4 +98,35 @@ codeunit 50100 "CLIPCourse - Sales Management"
     local procedure OnAfterPostCourseJournalLine(var SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line"; CourseJournalLine: Record "CLIP Course Journal Line")
     begin
     end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", OnAfterValidateEvent, Quantity, false, false)]
+    local procedure OnAfterValidateEvent_Quantity(var Rec: Record "Sales Line")
+    begin
+        CheckCourseEditionMaxStudents(Rec);
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", OnAfterValidateEvent, "CLIP Course Edition", false, false)]
+    local procedure OnAfterValidateEvent_CourseEdition(var Rec: Record "Sales Line")
+    begin
+        CheckCourseEditionMaxStudents(Rec);
+    end;
+
+    local procedure CheckCourseEditionMaxStudents(var SalesLine: Record "Sales Line")
+    var
+        CourseEdition: Record "CLIP Course Edition";
+    begin
+        if SalesLine.Type <> SalesLine.Type::"CLIP Course" then
+            exit;
+
+        if SalesLine."CLIP Course Edition" = '' then
+            exit;
+
+        CourseEdition.SetLoadFields("Max. Students", CourseEdition."Sales (Qty.)");
+        CourseEdition.Get(SalesLine."No.", SalesLine."CLIP Course Edition");
+        CourseEdition.CalcFields("Sales (Qty.)");
+
+        if (CourseEdition."Sales (Qty.)" + SalesLine.Quantity) > CourseEdition."Max. Students" then
+            Message('Con las ventas previas (%1) más la venta actual (%2) para el curso %3 y edición %4, se superaría el número máximo de alumnos (%5)',
+                CourseEdition."Sales (Qty.)", SalesLine.Quantity, SalesLine."No.", SalesLine."CLIP Course Edition", CourseEdition."Max. Students");
+    end;
 }
