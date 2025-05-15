@@ -9,18 +9,18 @@ report 50101 "CLIPCourse Information"
     {
         dataitem(Course; "CLIP Course")
         {
-            column(No_; "No.") { }
-            column(Name; Name) { }
-            column(Duration__hours_; "Duration (hours)") { }
+            column(CourseNo; "No.") { }
+            column(CourseName; Name) { }
+            column(CourseDuration; "Duration (hours)") { }
 
             dataitem("CLIP Course Edition"; "CLIP Course Edition")
             {
                 DataItemLinkReference = Course;
                 DataItemLink = "Course No." = field("No.");
 
-                column(Edition; Edition) { }
-                column(Max__Students; "Max. Students") { }
-                column(Sales__Qty__; "Sales (Qty.)") { }
+                column(CourseEdition; Edition) { }
+                column(CourseEditionMaxStudents; "Max. Students") { }
+                column(CourseEditionSalesQty; "Sales (Qty.)") { }
             }
         }
     }
