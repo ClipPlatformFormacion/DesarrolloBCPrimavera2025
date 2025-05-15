@@ -523,9 +523,9 @@
         </trans-unit>
         <trans-unit id="Report 120358521 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Update Course Price</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Actualizar precio cursos</note>
+          <note from="Developer" annotates="general" priority="2">ESP="Actualizar precio cursos"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report CLIP Update Course Price - Property Caption</note>
-          <target>"Actualizar precio cursos</target>
+          <target>Actualizar precio cursos</target>
         </trans-unit>
         <trans-unit id="Report 120358521 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Options</source>
@@ -543,6 +543,18 @@
           <note from="Developer" annotates="general" priority="2">ESP="Porcentaje"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report CLIP Update Course Price - Control PercentajeControl - Property Caption</note>
           <target>Porcentaje</target>
+        </trans-unit>
+        <trans-unit id="Report 3425963497 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Course Information</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Información cursos"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CLIPCourse Information - Property Caption</note>
+          <target>Información cursos</target>
+        </trans-unit>
+        <trans-unit id="Report 3425963497 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Opciones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CLIPCourse Information - Control Options - Property Caption</note>
+          <target>Opciones</target>
         </trans-unit>
         <trans-unit id="TableExtension 4004720939 - Field 346014409 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
           <source>Course Edition</source>
