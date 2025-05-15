@@ -114,6 +114,10 @@ codeunit 50100 "CLIPCourse - Sales Management"
     local procedure CheckCourseEditionMaxStudents(var SalesLine: Record "Sales Line")
     var
         CourseEdition: Record "CLIP Course Edition";
+        // MaxtudentsExceedeErr: TextConst ENU = 'With the previous sales (%1) plus the current sale (%2) for course %3 and edition %4, the maximum number of students (%5) would be exceeded',
+        //                                 ESP = 'Con las ventas previas (%1) más la venta actual (%2) para el curso %3 y edición %4, se superaría el número máximo de alumnos (%5)';
+        MaxtudentsExceedeErr: Label 'With the previous sales (%1) plus the current sale (%2) for course %3 and edition %4, the maximum number of students (%5) would be exceeded',
+                                Comment = 'ESP="Con las ventas previas (%1) más la venta actual (%2) para el curso %3 y edición %4, se superaría el número máximo de alumnos (%5)"';
     begin
         if SalesLine.Type <> SalesLine.Type::"CLIP Course" then
             exit;
@@ -126,7 +130,6 @@ codeunit 50100 "CLIPCourse - Sales Management"
         CourseEdition.CalcFields("Sales (Qty.)");
 
         if (CourseEdition."Sales (Qty.)" + SalesLine.Quantity) > CourseEdition."Max. Students" then
-            Message('Con las ventas previas (%1) más la venta actual (%2) para el curso %3 y edición %4, se superaría el número máximo de alumnos (%5)',
-                CourseEdition."Sales (Qty.)", SalesLine.Quantity, SalesLine."No.", SalesLine."CLIP Course Edition", CourseEdition."Max. Students");
+            Message(MaxtudentsExceedeErr, CourseEdition."Sales (Qty.)", SalesLine.Quantity, SalesLine."No.", SalesLine."CLIP Course Edition", CourseEdition."Max. Students");
     end;
 }

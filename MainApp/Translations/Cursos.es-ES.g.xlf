@@ -326,6 +326,12 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course Ledger Entry - Field Unit Price - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1883928519 - Method 799320939 - NamedType 3087971201" size-unit="char" translate="yes" xml:space="preserve">
+          <source>With the previous sales (%1) plus the current sale (%2) for course %3 and edition %4, the maximum number of students (%5) would be exceeded</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Con las ventas previas (%1) más la venta actual (%2) para el curso %3 y edición %4, se superaría el número máximo de alumnos (%5)"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit CLIPCourse - Sales Management - Method CheckCourseEditionMaxStudents - NamedType MaxtudentsExceedeErr</note>
+          <target>Con las ventas previas (%1) más la venta actual (%2) para el curso %3 y edición %4, se superaría el número máximo de alumnos (%5)</target>
+        </trans-unit>
         <trans-unit id="Page 3927749657 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Course Card</source>
           <note from="Developer" annotates="general" priority="2">ESP="Ficha curso"</note>
