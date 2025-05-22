@@ -3,7 +3,7 @@ report 50101 "CLIPCourse Information"
     Caption = 'Course Information', comment = 'ESP="Información cursos"';
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
-    DefaultRenderingLayout = RDLC;
+    DefaultRenderingLayout = Excel;
 
     dataset
     {
@@ -57,6 +57,16 @@ report 50101 "CLIPCourse Information"
         {
             Type = RDLC;
             LayoutFile = 'Source/CourseInformation.rdl';
+        }
+        layout(Excel)
+        {
+            Type = Excel;
+            LayoutFile = 'Source/CourseInformation.xlsx';
+        }
+        layout(Word)
+        {
+            Type = Word;
+            LayoutFile = 'Source/CourseInformation.docx';
         }
     }
 
