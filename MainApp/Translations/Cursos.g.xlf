@@ -523,6 +523,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="Opciones"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report CLIPCourse Information - Control Options - Property Caption</note>
         </trans-unit>
+        <trans-unit id="XmlPort 3682206961 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export Sales Orders</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Exportar Pedidos de Venta"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort CLIPExport Sales Orders - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 4004720939 - Field 346014409 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
           <source>Course Edition</source>
           <note from="Developer" annotates="general" priority="2">ESP="Edición curso"</note>
