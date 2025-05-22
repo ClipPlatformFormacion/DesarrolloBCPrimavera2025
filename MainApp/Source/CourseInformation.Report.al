@@ -9,18 +9,23 @@ report 50101 "CLIPCourse Information"
     {
         dataitem(Course; "CLIP Course")
         {
-            column(CourseNo; "No.") { }
-            column(CourseName; Name) { }
-            column(CourseDuration; "Duration (hours)") { }
+            // PrintOnlyIfDetail = true;
+            column(CourseNo; "No.") { IncludeCaption = true; }
+            column(CourseName; Name) { IncludeCaption = true; }
+            column(CourseDuration; "Duration (hours)") { IncludeCaption = true; }
 
             dataitem("CLIP Course Edition"; "CLIP Course Edition")
             {
                 DataItemLinkReference = Course;
                 DataItemLink = "Course No." = field("No.");
+                DataItemTableView = sorting("Course No.", Edition);
 
-                column(CourseEdition; Edition) { }
-                column(CourseEditionMaxStudents; "Max. Students") { }
-                column(CourseEditionSalesQty; "Sales (Qty.)") { }
+                column(CourseEdition; Edition)
+                {
+                    IncludeCaption = true;
+                }
+                column(CourseEditionMaxStudents; "Max. Students") { IncludeCaption = true; }
+                column(CourseEditionSalesQty; "Sales (Qty.)") { IncludeCaption = true; }
             }
         }
     }
