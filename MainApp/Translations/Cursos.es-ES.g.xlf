@@ -550,6 +550,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report CLIPCourse Information - Property Caption</note>
           <target>Información cursos</target>
         </trans-unit>
+        <trans-unit id="Report 3425963497 - NamedType 1987762555" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Page</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Pág."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report CLIPCourse Information - NamedType CurrReport_PAGENOCaptionLbl</note>
+          <target>Pág.</target>
+        </trans-unit>
         <trans-unit id="Report 3425963497 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Options</source>
           <note from="Developer" annotates="general" priority="2">ESP="Opciones"</note>

@@ -10,6 +10,9 @@ report 50101 "CLIPCourse Information"
         dataitem(Course; "CLIP Course")
         {
             // PrintOnlyIfDetail = true;
+            column(CurrReport_PAGENOCaption; CurrReport_PAGENOCaptionLbl) { }
+            column(Customer___ListCaption; Customer___ListCaptionLbl) { }
+            column(COMPANYNAME; COMPANYPROPERTY.DisplayName()) { }
             column(CourseNo; "No.") { IncludeCaption = true; }
             column(CourseName; Name) { IncludeCaption = true; }
             column(CourseDuration; "Duration (hours)") { IncludeCaption = true; }
@@ -56,4 +59,8 @@ report 50101 "CLIPCourse Information"
             LayoutFile = 'Source/CourseInformation.rdl';
         }
     }
+
+    var
+        CurrReport_PAGENOCaptionLbl: Label 'Page', Comment = 'ESP="Pág."';
+        Customer___ListCaptionLbl: Label 'Course Information', Comment = 'ESP="Información cursos"';
 }
