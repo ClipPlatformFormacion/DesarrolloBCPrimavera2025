@@ -27,7 +27,7 @@ reportextension 50100 "CLIP Standard Sales - Invoice" extends "Standard Sales - 
         layout(CLIPNuevoRDLCConEdiciones)
         {
             Type = RDLC;
-            LayoutFile = './source/StandarSalesInvoice.rdl';
+            LayoutFile = './source/StandardSalesInvoice.rdl';
         }
     }
 }
