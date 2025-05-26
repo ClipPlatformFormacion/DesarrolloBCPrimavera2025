@@ -3,9 +3,7 @@ xmlport 50100 "CLIPExport Sales Orders"
     Caption = 'Export Sales Orders', comment = 'ESP="Exportar Pedidos de Venta"';
     Direction = Export;
     FormatEvaluate = Xml;
-    Format = VariableText;
-    FieldSeparator = ';';
-    FieldDelimiter = '"';
+    Format = FixedText;
 
     schema
     {
@@ -16,6 +14,7 @@ xmlport 50100 "CLIPExport Sales Orders"
                 SourceTableView = where(Number = const(1));
                 textelement(DocumentTypeCaption)
                 {
+                    Width = 20;
                     trigger OnBeforePassVariable()
                     begin
                         DocumentTypeCaption := 'Document Type';
@@ -23,6 +22,7 @@ xmlport 50100 "CLIPExport Sales Orders"
                 }
                 textelement(CustomerCaption)
                 {
+                    Width = 20;
                     trigger OnBeforePassVariable()
                     begin
                         CustomerCaption := 'Customer No.';
@@ -30,6 +30,7 @@ xmlport 50100 "CLIPExport Sales Orders"
                 }
                 textelement(NoCaption)
                 {
+                    Width = 20;
                     trigger OnBeforePassVariable()
                     begin
                         NoCaption := 'document No.';
@@ -37,6 +38,8 @@ xmlport 50100 "CLIPExport Sales Orders"
                 }
                 textelement(DateCaption)
                 {
+
+                    Width = 15;
                     trigger OnBeforePassVariable()
                     begin
                         DateCaption := 'Posting Date';
@@ -44,6 +47,7 @@ xmlport 50100 "CLIPExport Sales Orders"
                 }
                 textelement(CurrencyCaption)
                 {
+                    Width = 3;
                     trigger OnBeforePassVariable()
                     begin
                         CurrencyCaption := 'Currency Code';
@@ -55,15 +59,28 @@ xmlport 50100 "CLIPExport Sales Orders"
                 SourceTableView = where("Document Type" = const(Order));
                 textattribute(DocumentType)
                 {
+                    Width = 20;
                     trigger OnBeforePassVariable()
                     begin
                         DocumentType := 'Order';
                     end;
                 }
-                fieldelement(Customer; SalesHeader."Sell-to Customer No.") { }
-                fieldelement(No; SalesHeader."No.") { }
-                fieldelement(Date; SalesHeader."Posting Date") { }
-                fieldelement(Currency; SalesHeader."Currency Code") { }
+                fieldelement(Customer; SalesHeader."Sell-to Customer No.")
+                {
+                    Width = 20;
+                }
+                fieldelement(No; SalesHeader."No.")
+                {
+                    Width = 20;
+                }
+                fieldelement(Date; SalesHeader."Posting Date")
+                {
+                    Width = 15;
+                }
+                fieldelement(Currency; SalesHeader."Currency Code")
+                {
+                    Width = 3;
+                }
             }
         }
     }
