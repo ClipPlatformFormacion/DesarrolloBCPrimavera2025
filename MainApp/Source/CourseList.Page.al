@@ -61,6 +61,11 @@ page 50100 "CLIP Course List"
                     ToolTip = 'View the history of transactions that have been posted for the selected record.';
                 }
             }
+            action(ImportCourses)
+            {
+                RunObject = xmlport "CLIPImport Course";
+                Image = Import;
+            }
         }
         area(Promoted)
         {
@@ -74,6 +79,9 @@ page 50100 "CLIP Course List"
                 }
                 actionref(LedgerEntries_Promoted; "Ledger E&ntries")
                 { }
+                actionref(ImportCourses_Promoted; ImportCourses)
+                {
+                }
             }
         }
     }
