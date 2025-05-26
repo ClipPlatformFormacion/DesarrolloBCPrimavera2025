@@ -11,4 +11,7 @@ enum 50101 "CLIP Customer Level"
     value(2; "Silver")
     {
     }
+    value(3; "Gold")
+    {
+    }
 }

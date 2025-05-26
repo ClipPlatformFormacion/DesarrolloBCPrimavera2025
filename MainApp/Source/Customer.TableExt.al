@@ -7,6 +7,8 @@ tableextension 50103 "CLIP Customer" extends Customer
             DataClassification = CustomerContent;
 
             trigger OnValidate()
+            var
+                Handled: Boolean;
             begin
                 case Rec."CLIP Customer Level" of
                     Enum::"CLIP Customer Level"::" ":
@@ -14,9 +16,14 @@ tableextension 50103 "CLIP Customer" extends Customer
                     Enum::"CLIP Customer Level"::Bronze:
                         Rec."CLIP Discount" := 5;
                     Enum::"CLIP Customer Level"::Silver:
-                        Rec."CLIP Discount" := 10
-                    else
-                        Error('Unknown Customer Level: %1', Rec."CLIP Customer Level");
+                        Rec."CLIP Discount" := 10;
+                    Enum::"CLIP Customer Level"::Gold:
+                        Rec."CLIP Discount" := 15;
+                    else begin
+                        OnValidateCustomerLevelOnBeforeUnknownCustomerLevel(Rec, Handled);
+                        if not Handled then
+                            Error('Unknown Customer Level: %1', Rec."CLIP Customer Level");
+                    end;
                 end;
             end;
         }
@@ -26,4 +33,9 @@ tableextension 50103 "CLIP Customer" extends Customer
             DataClassification = CustomerContent;
         }
     }
+
+    [IntegrationEvent(false, false)]
+    local procedure OnValidateCustomerLevelOnBeforeUnknownCustomerLevel(var Customer: Record Customer; var Handled: boolean)
+    begin
+    end;
 }
