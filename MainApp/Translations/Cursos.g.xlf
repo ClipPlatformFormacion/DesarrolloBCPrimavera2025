@@ -528,6 +528,16 @@
           <note from="Developer" annotates="general" priority="2">ESP="Exportar Pedidos de Venta"</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort CLIPExport Sales Orders - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2281297054 - Field 1236818424 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
+          <source>CLIP Customer Level</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CLIP Customer - Field CLIP Customer Level - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2281297054 - Field 3926176365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
+          <source>CLIP Discount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension CLIP Customer - Field CLIP Discount - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 4004720939 - Field 346014409 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
           <source>Course Edition</source>
           <note from="Developer" annotates="general" priority="2">ESP="Edición curso"</note>
