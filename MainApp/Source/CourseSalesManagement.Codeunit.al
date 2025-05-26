@@ -107,8 +107,15 @@ codeunit 50100 "CLIPCourse - Sales Management"
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", OnAfterValidateEvent, "CLIP Course Edition", false, false)]
     local procedure OnAfterValidateEvent_CourseEdition(var Rec: Record "Sales Line")
+    var
+        Customer: Record Customer;
+        ICustomerLevel: Interface CLIPICustomerLevel;
     begin
         CheckCourseEditionMaxStudents(Rec);
+
+        Customer.Get(Rec."Sell-to Customer No.");
+        ICustomerLevel := Customer."CLIP Customer Level";
+        ICustomerLevel.SendEmail();
     end;
 
     local procedure CheckCourseEditionMaxStudents(var SalesLine: Record "Sales Line")

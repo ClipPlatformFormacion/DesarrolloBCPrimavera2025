@@ -1,8 +1,8 @@
-codeunit 50143 "CLIPCustomer Level Subscribers" implements CLIPICustomerLevel
+codeunit 50104 "CLIPSilver Customer Level" implements CLIPICustomerLevel
 {
     procedure GetDiscount(): Decimal
     begin
-        exit(30);
+        exit(10);
     end;
 
     procedure SendEmail()
