@@ -20,6 +20,8 @@ page 50100 "CLIP Course List"
                 field(Price; Rec.Price) { }
                 field("Language Code"; Rec."Language Code") { }
                 field("Type (Enum)"; Rec."Type (Enum)") { }
+                field(Updated; Rec.Updated) { }
+                field(errorMessage; Rec."Error Message") { }
             }
         }
         area(FactBoxes)

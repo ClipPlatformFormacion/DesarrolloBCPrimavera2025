@@ -47,6 +47,14 @@ table 50100 "CLIP Course"
         {
             Caption = 'Price', Comment = 'ESP="Precio"';
             BlankZero = true;
+
+            trigger OnValidate()
+            begin
+                if Rec."No." = 'GL00000005' then
+                    Error('El nuevo precio %1 es incorrecto', Rec.Price);
+
+                Commit();
+            end;
         }
         field(6; "Language Code"; Code[10])
         {
@@ -88,6 +96,9 @@ table 50100 "CLIP Course"
             Caption = 'VAT Prod. Posting Group', Comment = 'ESP="Grupo contable IVA prod."';
             TableRelation = "VAT Product Posting Group";
         }
+        field(60; Updated; Integer)
+        { }
+        field(70; "Error Message"; Text[2048]) { }
     }
 
     fieldgroups

@@ -33,6 +33,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="Duración (horas)"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course - Field Duration (hours) - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2553370741 - Field 2852966117 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Error Message</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course - Field Error Message - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2553370741 - Field 2139693550 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Gen. Prod. Posting Group</source>
           <note from="Developer" annotates="general" priority="2">ESP="Grupo contable prod. gen."</note>
@@ -82,6 +87,11 @@
           <source> ,Instructor-Lead,Video Tutorial</source>
           <note from="Developer" annotates="general" priority="2">ESP=" ,Guiado por profesor,Vídeo tutorial"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course - Field Type (Option) - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2553370741 - Field 2339977023 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Updated</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table CLIP Course - Field Updated - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2553370741 - Field 236064653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Prod. Posting Group</source>

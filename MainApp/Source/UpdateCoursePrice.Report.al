@@ -17,11 +17,26 @@ report 50100 "CLIP Update Course Price"
             end;
 
             trigger OnAfterGetRecord()
+            var
+                UpdateCoursePriceEH: Codeunit "CLIPUpdate Course Price - EH";
+                Success: Boolean;
             begin
                 //código que se ejecuta en cada una de las iteraciones del bucle
                 // Message('OnAfterGetRecord ' + Course."No.");
-                Course.Validate(Price, Course.Price * (1 + Percentaje / 100));
-                Course.Modify(true);
+                UpdateCoursePriceEH.SetParameters(Course, Percentaje);
+                Success := UpdateCoursePriceEH.Run();
+                if Success then begin
+                    Course.Get(Course."No.");
+                    Course.Updated := Course.Updated + 1;
+                    Course."Error Message" := '';
+                    Course.Modify();
+                end
+                else begin
+                    Course.Get(Course."No.");
+                    Course."Error Message" := CopyStr(GetLastErrorText(), 1, MaxStrLen(Course."Error Message"));
+                    Course.Modify();
+                end;
+                Commit();
             end;
 
             trigger OnPostDataItem()
