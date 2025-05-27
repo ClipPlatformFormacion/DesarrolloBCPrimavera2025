@@ -4,6 +4,8 @@ table 50100 "CLIP Course"
     Caption = 'Course', Comment = 'ESP="Curso"';
     DataClassification = CustomerContent;
     LookupPageId = "CLIP Course List";
+    // ObsoleteState = Pending;
+    // ObsoleteReason = 'Empezando en BC26, este campo va a ser eliminado en algun momento. Por favor, utiliza el campo "Name"';
 
     fields
     {
@@ -37,6 +39,8 @@ table 50100 "CLIP Course"
         field(3; "Content Description"; Text[2048])
         {
             Caption = 'Content Description', Comment = 'ESP="Temario"';
+            ObsoleteState = Pending;
+            ObsoleteReason = 'Empezando en BC26, este campo va a ser eliminado en algun momento. Por favor, utiliza el campo "Name"';
         }
         field(4; "Duration (hours)"; Integer)
         {
@@ -133,6 +137,7 @@ table 50100 "CLIP Course"
         end;
     end;
 
+    [Obsolete('Empezando en BC26, este campo va a ser eliminado en algun momento. Por favor, utiliza el campo "Name"')]
     procedure AssistEdit(OldCourse: Record "CLIP Course") Result: Boolean
     var
         Course: Record "CLIP Course";

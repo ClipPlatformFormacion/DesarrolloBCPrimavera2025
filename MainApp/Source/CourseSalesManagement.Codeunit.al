@@ -139,4 +139,23 @@ codeunit 50100 "CLIPCourse - Sales Management"
         if (CourseEdition."Sales (Qty.)" + SalesLine.Quantity) > CourseEdition."Max. Students" then
             Message(MaxtudentsExceedeErr, CourseEdition."Sales (Qty.)", SalesLine.Quantity, SalesLine."No.", SalesLine."CLIP Course Edition", CourseEdition."Max. Students");
     end;
+
+    local procedure UnProcedimiento()
+    begin
+        OtroProcedimiento();
+    end;
+
+
+#if UnSimbolo
+    local procedure OtroProcedimiento()
+    begin
+
+    end;
+#else
+    local procedure OtroProcedimiento(): Boolean
+    begin
+
+    end;
+#endif
+
 }

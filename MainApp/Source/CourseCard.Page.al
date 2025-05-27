@@ -26,8 +26,12 @@ page 50101 "CLIP Course Card"
             group(TrainingDetails)
             {
                 Caption = 'Training Details', Comment = 'ESP="Detalles formativos"';
-                field("Content Description"; Rec."Content Description") { }
-                field("Duration (hours)"; Rec."Duration (hours)") { }
+                // field("Content Description"; Rec."Content Description") { }
+                field("Duration (hours)"; Rec."Duration (hours)")
+                {
+                    ObsoleteState = Pending;
+                    ObsoleteReason = 'Empezando en BC26, este campo va a ser eliminado en algun momento. Por favor, utiliza el campo "Name"';
+                }
                 field("Language Code"; Rec."Language Code") { }
                 field("Type (Enum)"; Rec."Type (Enum)") { }
             }
