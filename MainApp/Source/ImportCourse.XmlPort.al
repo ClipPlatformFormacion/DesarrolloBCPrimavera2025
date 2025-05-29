@@ -1,10 +1,9 @@
 xmlport 50101 "CLIPImport Course"
 {
-    Format = VariableText;
-    FieldSeparator = ';';
-    FieldDelimiter = '"';
+    Format = Xml;
     Direction = Import;
     FormatEvaluate = Xml;
+    UseDefaultNamespace = true;
 
     schema
     {
