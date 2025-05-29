@@ -141,6 +141,8 @@ codeunit 50100 "CLIPCourse - Sales Management"
     end;
 
     local procedure UnProcedimiento()
+    var
+        UnaVariable: Text;
     begin
         OtroProcedimiento();
     end;
